@@ -22,6 +22,10 @@ configure do
   set :session_secret, ENV['SESSION_KEY'] || 'lighthouselabssecret'
 
   set :views, File.join(Sinatra::Application.root, "app", "views")
+
+	ActiveSupport::Inflector.inflections do |inflect|
+		inflect.irregular 'barista', 'baristas'
+	end
 end
 
 # Set up the database and models

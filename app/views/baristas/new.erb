@@ -1,0 +1,10 @@
+<h2>Create a new barista</h2>
+
+<% if @errors %>
+	<h1><%= @errors %></h1>
+<% end %>
+<form method="POST" action="/baristas/create">
+	<label for="name">Name of barista: </label>
+	<input type="text" name="name" id="name" placeholder="Enter a name..."><br><br>
+	<input type="submit" value="Create">
+</form>

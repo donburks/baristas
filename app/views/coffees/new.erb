@@ -1,0 +1,15 @@
+<h3>Make a new coffee!</h3>
+
+<form method="POST" action="/coffees/create">
+	<label for="name">Name of coffee: </label>
+	<input type="text" name="name" id="name" placeholder="Enter the coffee.."><br><br>
+
+	<label for="barista">Pick a barista: </label>
+	<select name="barista" id="barista">
+<% @baristas.each do |barista| %>
+		<option value="<%= barista.id %>"><%= barista.name %></option>
+<% end %>
+	</select><br><br>	
+
+	<input type="submit" value="Create Coffee">
+</form>
